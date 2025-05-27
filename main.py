@@ -7,6 +7,10 @@ import inspect
 import seaborn as sns
 inspect.signature(sns.scatterplot)
 # <Signature (data=None, *, x=None, y=None, hue=None, size=None, style=None, palette=None, hue_order=None, hue_norm=None, sizes=None, size_order=None, size_norm=None, markers=True, style_order=None, legend='auto', ax=None, **kwargs)>
+# also doable by: sns.scatterplot.__text_signature__
+
+
+
 
 inspect.signature(sns.pairplot)
 # <Signature (data, *, hue=None, hue_order=None, palette=None, vars=None, x_vars=None, y_vars=None, kind='scatter', diag_kind='auto', markers=None, height=2.5, aspect=1, corner=False, dropna=False, plot_kws=None, diag_kws=None, grid_kws=None, size=None)>
@@ -17,10 +21,10 @@ inspect.signature(sns.heatmap)
 
 
 
-import pandas as pd
-import numpy as np
-import matplotlib.pylab as plt
-import seaborn as sns
+import pandas as pd  # noqa: E402
+import numpy as np  # noqa: E402
+import matplotlib.pylab as plt  # noqa: E402
+import seaborn as sns  # noqa: E402
 plt.style.use('ggplot')
 # pd.set_option('display.max_columns', 200)
 # pd.set_option('display.max_rows', 0)
@@ -121,7 +125,7 @@ df.isnull().sum()
 # Gforce              725
 # dtype: int64
 
-df.duplicated().sum() # non is fully duplicated
+df.duplicated().sum() # no duplicates
 # 0
 
   
@@ -303,5 +307,4 @@ ax = df.query('Location != "Other"')    \
 ax.set_xlabel('Average Acoaster Speed')
 plt.show()  # Figure_8.png
 
-import pdb; pdb.set_trace()  # breakpoint 249a1fd1 //
  
